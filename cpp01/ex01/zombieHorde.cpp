@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 12:44:35 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 12:56:21 by yipan            ###   ########.fr       */
+/*   Created: 2025/12/30 12:58:47 by yipan             #+#    #+#             */
+/*   Updated: 2025/12/30 13:58:59 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-int	main()
+Zombie* zombieHorde(int N, std::string name)
 {
-	PhoneBook	phonebook;
-	std::string	cmd;
-
-	while (1)
+	if (N <= 0)
+		return (NULL);
+	
+	Zombie	*horde = new Zombie[N];
+	for (int i = 0; i < N; i++)
 	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, cmd);
-		
-		if (std::cin.eof())
-			break ;
-		if (cmd == "ADD")
-			phonebook.addContact();
-		else if (cmd == "SEARCH")
-			phonebook.searchContact();
-		else if (cmd == "EXIT")
-			break ;
+		horde[i].zombieName(name);
 	}
-	return (0);
+	return (horde);
 }

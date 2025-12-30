@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 12:44:35 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 12:56:21 by yipan            ###   ########.fr       */
+/*   Created: 2025/12/27 11:49:23 by yipan             #+#    #+#             */
+/*   Updated: 2025/12/30 12:51:54 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <iostream>
-#include <string>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int	main()
+# include "Contact.hpp"
+
+class PhoneBook
 {
-	PhoneBook	phonebook;
-	std::string	cmd;
+	private:
+		Contact contacts[8];
+		int		count;
+	public:
+		PhoneBook();//constructor
+		void addContact();
+		void searchContact() const;
+};
 
-	while (1)
-	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, cmd);
-		
-		if (std::cin.eof())
-			break ;
-		if (cmd == "ADD")
-			phonebook.addContact();
-		else if (cmd == "SEARCH")
-			phonebook.searchContact();
-		else if (cmd == "EXIT")
-			break ;
-	}
-	return (0);
-}
+#endif

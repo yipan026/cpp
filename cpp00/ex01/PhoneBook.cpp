@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 11:49:10 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/27 12:54:15 by yipan            ###   ########.fr       */
+/*   Updated: 2025/12/30 12:52:35 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 #include <string>
 #include <iomanip>
 
-Phonebook::Phonebook() : count(0) {}
+PhoneBook::PhoneBook() : count(0) {}
 
-void Phonebook::addContact()
+void PhoneBook::addContact()
 {
 	contacts[count % 8].setContact();
 	count++;
 }
 
-void Phonebook::searchContact() const
+void PhoneBook::searchContact() const
 {
 	int total = (count < 8) ? count : 8;
 	

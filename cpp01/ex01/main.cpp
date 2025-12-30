@@ -5,33 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 12:44:35 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 12:56:21 by yipan            ###   ########.fr       */
+/*   Created: 2025/12/30 12:58:51 by yipan             #+#    #+#             */
+/*   Updated: 2025/12/30 14:04:49 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 #include <iostream>
-#include <string>
 
 int	main()
 {
-	PhoneBook	phonebook;
-	std::string	cmd;
+	// int	N = 0;
+	// Zombie	*horde = zombieHorde(N, "Creeper");
 
-	while (1)
+	int	N = 5;
+	Zombie	*horde = zombieHorde(N, "Walker");
+
+	if (horde)
 	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, cmd);
-		
-		if (std::cin.eof())
-			break ;
-		if (cmd == "ADD")
-			phonebook.addContact();
-		else if (cmd == "SEARCH")
-			phonebook.searchContact();
-		else if (cmd == "EXIT")
-			break ;
+		for (int i = 0; i < N; i++)
+			horde->announce();
+		delete[](horde);
 	}
-	return (0);
+	else
+		std::cout << "No zombies created." << std::endl;
 }

@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 12:44:35 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 12:56:21 by yipan            ###   ########.fr       */
+/*   Created: 2025/12/30 12:58:37 by yipan             #+#    #+#             */
+/*   Updated: 2025/12/30 13:57:10 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <iostream>
-#include <string>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int	main()
+# include <string>
+
+class Zombie
 {
-	PhoneBook	phonebook;
-	std::string	cmd;
+private:
+	std::string	name;
+public:
+	Zombie();
+	~Zombie();
+	
+	void announce(void);
+	void zombieName(const std::string& n);
+};
 
-	while (1)
-	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, cmd);
-		
-		if (std::cin.eof())
-			break ;
-		if (cmd == "ADD")
-			phonebook.addContact();
-		else if (cmd == "SEARCH")
-			phonebook.searchContact();
-		else if (cmd == "EXIT")
-			break ;
-	}
-	return (0);
-}
+Zombie* zombieHorde(int N, std::string name);
+
+#endif

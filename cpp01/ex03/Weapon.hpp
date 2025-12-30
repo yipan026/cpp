@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 11:49:23 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/29 15:16:05 by yipan            ###   ########.fr       */
+/*   Created: 2025/12/30 15:42:55 by yipan             #+#    #+#             */
+/*   Updated: 2025/12/30 15:53:17 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-# include "Contact.hpp"
+# include <string>
 
-class Phonebook
+class Weapon
 {
-	private:
-		Contact contacts[8];
-		int		count;
-	public:
-		Phonebook();//constructor
-		void addContact();
-		void searchContact() const;
+private:
+	std::string	type;
+public:
+	Weapon(/* args */);
+	~Weapon();
+	const std::string& getType() const;
+	void	setType(const std::string t);
 };
 
 #endif

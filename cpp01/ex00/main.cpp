@@ -5,33 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 12:44:35 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 12:56:21 by yipan            ###   ########.fr       */
+/*   Created: 2025/12/30 12:58:51 by yipan             #+#    #+#             */
+/*   Updated: 2025/12/30 13:45:57 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 #include <iostream>
-#include <string>
 
 int	main()
 {
-	PhoneBook	phonebook;
-	std::string	cmd;
+	Zombie*	z1 = newZombie("Foo");
+	Zombie	*z2 = newZombie("");
+	z1->announce();
+	z2->announce();
+	delete (z1);
+	delete (z2);
 
-	while (1)
-	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, cmd);
-		
-		if (std::cin.eof())
-			break ;
-		if (cmd == "ADD")
-			phonebook.addContact();
-		else if (cmd == "SEARCH")
-			phonebook.searchContact();
-		else if (cmd == "EXIT")
-			break ;
-	}
+	randomChump("Eval");
+	randomChump("");
 	return (0);
 }

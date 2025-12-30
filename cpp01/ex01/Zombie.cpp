@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 12:44:35 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 12:56:21 by yipan            ###   ########.fr       */
+/*   Created: 2025/12/30 12:58:41 by yipan             #+#    #+#             */
+/*   Updated: 2025/12/30 13:57:02 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 #include <iostream>
-#include <string>
 
-int	main()
+Zombie::Zombie() {};
+
+Zombie::~Zombie()
 {
-	PhoneBook	phonebook;
-	std::string	cmd;
+	std::cout << name << " is destroyed" << std::endl;
+}
 
-	while (1)
-	{
-		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, cmd);
-		
-		if (std::cin.eof())
-			break ;
-		if (cmd == "ADD")
-			phonebook.addContact();
-		else if (cmd == "SEARCH")
-			phonebook.searchContact();
-		else if (cmd == "EXIT")
-			break ;
-	}
-	return (0);
+void Zombie::announce()
+{
+	std::cout << name << ":  BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::zombieName(const std::string& n)
+{
+	name = n;
 }
