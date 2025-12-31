@@ -6,7 +6,7 @@
 #    By: yipan <yipan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/30 15:44:10 by yipan             #+#    #+#              #
-#    Updated: 2025/12/30 15:44:31 by yipan            ###   ########.fr        #
+#    Updated: 2025/12/31 11:55:53 by yipan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJCS = $(SRCS:.cpp=.o)
 
-NAME = Zombie
+NAME = Attack
 
 all: $(NAME)
 

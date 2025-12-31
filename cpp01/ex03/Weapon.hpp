@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 15:42:55 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 15:53:17 by yipan            ###   ########.fr       */
+/*   Updated: 2025/12/31 11:37:54 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ class Weapon
 private:
 	std::string	type;
 public:
-	Weapon(/* args */);
-	~Weapon();
+	Weapon(const std::string& _weaponType);
 	const std::string& getType() const;
-	void	setType(const std::string t);
+	void	setType(const std::string& newType);
 };
 
 #endif
