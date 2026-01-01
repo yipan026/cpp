@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 12:58:37 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 13:57:10 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/01 11:36:34 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie
 {
 private:
-	std::string	name;
+	std::string	_name;
 public:
 	Zombie();
 	~Zombie();

@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 11:49:10 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 12:52:35 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/01 11:34:53 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 #include <string>
 #include <iomanip>
 
-PhoneBook::PhoneBook() : count(0) {}
+PhoneBook::PhoneBook() : _count(0) {}
 
 void PhoneBook::addContact()
 {
-	contacts[count % 8].setContact();
-	count++;
+	_contacts[_count % 8].setContact();
+	_count++;
 }
 
 void PhoneBook::searchContact() const
 {
-	int total = (count < 8) ? count : 8;
+	int total = (_count < 8) ? _count : 8;
 	
 	if (total == 0)
 	{
@@ -37,7 +37,7 @@ void PhoneBook::searchContact() const
 			<< std::setw(10) << "Last Name" << "|"
 			<< std::setw(10) << "Nickname" << std::endl;
 	for (int i = 0; i < total; i++)
-		contacts[i].display_Sum(i);
+		_contacts[i].display_Sum(i);
 	
 	std::string input;
 	int			index = -1;
@@ -53,7 +53,7 @@ void PhoneBook::searchContact() const
 		index = -1;
 	}
 	if (index >= 0 && index < total)
-		contacts[index].display_All();
+		_contacts[index].display_All();
 	else
 		std::cout << "Invalid index." << std::endl;
 }

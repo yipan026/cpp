@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 11:49:23 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/30 12:51:54 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/01 11:34:14 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class PhoneBook
 {
 	private:
-		Contact contacts[8];
-		int		count;
+		Contact _contacts[8];
+		int		_count;
 	public:
 		PhoneBook();//constructor
 		void addContact();

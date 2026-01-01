@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 15:43:43 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/31 11:43:39 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/01 11:39:03 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 class HumanA
 {
 private:
-	std::string	name;
-	Weapon& weapon;
+	std::string	_name;
+	Weapon& _weapon;
 public:
-	HumanA(const std::string& _name, Weapon& _weapon);
+	HumanA(const std::string& name, Weapon& weapon);
 	void attack() const;
 };
 

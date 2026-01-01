@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 15:43:50 by yipan             #+#    #+#             */
-/*   Updated: 2025/12/31 11:38:07 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/01 11:38:17 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 class HumanB
 {
 private:
-	std::string	name;
-	Weapon *weapon;
+	std::string	_name;
+	Weapon *_weapon;
 public:
-	HumanB(const std::string& _name);
-	void setWeapon(Weapon &_weapon);
+	HumanB(const std::string& name);
+	void setWeapon(Weapon &weapon);
 	void attack() const;
 };
 
