@@ -6,17 +6,17 @@
 #    By: yipan <yipan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/31 15:22:00 by yipan             #+#    #+#              #
-#    Updated: 2026/01/02 15:51:10 by yipan            ###   ########.fr        #
+#    Updated: 2026/01/03 12:53:42 by yipan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJCS = $(SRCS:.cpp=.o)
 
-NAME = bsq
+NAME = ex01
 
 all: $(NAME)
 
