@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 11:04:35 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 11:55:45 by yipan            ###   ########.fr       */
+/*   Created: 2026/01/05 11:05:18 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/05 13:04:30 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-# include <iostream>
-# include <string>
-
-class Animal
+int	main()
 {
-	private:
-		std::string	_type;
-	public:
-		Animal();
-		Animal(const Animal& other);
-		Animal&	operator=(const Animal& other);
-		virtual	~Animal();
-		//member funcs
-		virtual void	makeSound() const;
+	Animal	*animals[10];
 
-		//getter setter
-		std::string	getType() const;
-		void		setType(const std::string& type);
-};
-
-#endif
+	for (int i = 0; i < 5; i++)
+		animals[i] = new Dog();
+	for (int i = 5; i < 10; i++)
+		animals[i] = new Cat();
+	
+	for (int i = 0; i < 10; i++)
+		delete (animals[i]);
+	return (0);
+}

@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 11:05:46 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 11:45:04 by yipan            ###   ########.fr       */
+/*   Created: 2026/01/05 11:07:31 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/05 13:14:36 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Dog.hpp"
 
-WrongCat::WrongCat() : WrongAnimal()
+Dog::Dog() : AAnimal()
 {
-	this->setType("WrongCat");
-	std::cout << "WrongCat default constructor called" << std::endl;
+	this->setType("Dog");
+	_brain = new Brain();
+	std::cout << "Dog default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
+Dog::Dog(const Dog& other) : AAnimal(other)
 {
 	this->setType(other.getType());
-	std::cout << "WrongCat copy constructor called" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
-WrongCat&	WrongCat::operator=(const WrongCat& other)
+Dog&	Dog::operator=(const Dog& other)
 {
 	if (this != &other)
 		this->setType(other.getType());
 	return (*this);
 }
 
-WrongCat::~WrongCat()
+Dog::~Dog()
 {
-	std::cout << "WrongCat default destructor called" << std::endl;
+	std::cout << "Dog default destructor called" << std::endl;
+	delete (_brain);
 }
 
-void	WrongCat::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << "Wrong Meow" << std::endl;
+	std::cout << "Wouf" << std::endl;
 }

@@ -6,7 +6,7 @@
 #    By: yipan <yipan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/05 11:05:26 by yipan             #+#    #+#              #
-#    Updated: 2026/01/05 11:46:59 by yipan            ###   ########.fr        #
+#    Updated: 2026/01/05 13:12:03 by yipan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp\
-	 WrongAnimal.cpp WrongCat.cpp
+	 WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJCS = $(SRCS:.cpp=.o)
-NAME = ex00
+NAME = ex02
 
 all: $(NAME)
 

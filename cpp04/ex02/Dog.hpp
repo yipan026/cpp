@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 11:04:35 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 11:55:45 by yipan            ###   ########.fr       */
+/*   Created: 2026/01/05 11:05:10 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/05 13:14:39 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
+# include "Animal.hpp"
+# include "Brain.hpp"
 # include <iostream>
-# include <string>
 
-class Animal
+class Dog : public AAnimal
 {
 	private:
-		std::string	_type;
+		Brain	*_brain;
 	public:
-		Animal();
-		Animal(const Animal& other);
-		Animal&	operator=(const Animal& other);
-		virtual	~Animal();
-		//member funcs
-		virtual void	makeSound() const;
+		Dog();
+		Dog(const Dog& other);
+		Dog&	operator=(const Dog& other);
+		virtual	~Dog();
 
-		//getter setter
-		std::string	getType() const;
-		void		setType(const std::string& type);
+		virtual void	makeSound() const;
 };
 
 #endif

@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 11:04:35 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 11:55:45 by yipan            ###   ########.fr       */
+/*   Created: 2026/01/05 11:05:49 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/05 12:58:25 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
+# include "WrongAnimal.hpp"
+# include "Brain.hpp"
 # include <iostream>
-# include <string>
 
-class Animal
+class WrongCat : public WrongAnimal
 {
 	private:
-		std::string	_type;
+		Brain	*_brain;
 	public:
-		Animal();
-		Animal(const Animal& other);
-		Animal&	operator=(const Animal& other);
-		virtual	~Animal();
-		//member funcs
-		virtual void	makeSound() const;
+		WrongCat();
+		WrongCat(const WrongCat& other);
+		WrongCat&	operator=(const WrongCat& other);
+		virtual	~WrongCat();
 
-		//getter setter
-		std::string	getType() const;
-		void		setType(const std::string& type);
+		virtual void	makeSound() const;
 };
 
 #endif

@@ -6,47 +6,41 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:07:23 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 11:30:08 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/05 13:13:56 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : _type("Animal")
+AAnimal::AAnimal() : _type("Animal")
 {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& other)
+AAnimal::AAnimal(const AAnimal& other)
 	: _type(other._type)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
 }
 
-Animal&	Animal::operator=(const Animal& other)
+AAnimal&	AAnimal::operator=(const AAnimal& other)
 {
 	if (this != &other)
 		_type = other._type;
 	return (*this);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
 	std::cout << "Animal default destructor called" << std::endl;
 }
 
-//member funcs
-void	Animal::makeSound() const
-{
-	std::cout << "Unknow Animal Sound" << std::endl;
-}
-
-std::string	Animal::getType() const
+std::string	AAnimal::getType() const
 {
 	return (_type);
 }
 
-void	Animal::setType(const std::string& type)
+void	AAnimal::setType(const std::string& type)
 {
 	_type = type;
 }

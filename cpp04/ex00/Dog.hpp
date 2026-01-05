@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/05 11:05:10 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/05 11:55:19 by yipan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
@@ -12,11 +22,10 @@ class Dog : public Animal
 	public:
 		Dog();
 		Dog(const Dog& other);
-		Dogl&	operator=(const Dog& other);
-		~Dog();
+		Dog&	operator=(const Dog& other);
+		virtual	~Dog();
 
-		void	makeSound();
-}
-
+		virtual void	makeSound() const;
+};
 
 #endif

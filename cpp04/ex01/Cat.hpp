@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 11:04:35 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 11:55:45 by yipan            ###   ########.fr       */
+/*   Created: 2026/01/05 11:04:43 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/05 12:58:14 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
+# include "Animal.hpp"
+# include "Brain.hpp"
 # include <iostream>
-# include <string>
 
-class Animal
+class Cat : public Animal
 {
 	private:
-		std::string	_type;
+		Brain	*_brain;
 	public:
-		Animal();
-		Animal(const Animal& other);
-		Animal&	operator=(const Animal& other);
-		virtual	~Animal();
-		//member funcs
-		virtual void	makeSound() const;
+		Cat();
+		Cat(const Cat& other);
+		Cat&	operator=(const Cat& other);
+		virtual	~Cat();
 
-		//getter setter
-		std::string	getType() const;
-		void		setType(const std::string& type);
+		virtual void	makeSound() const;
 };
 
 #endif

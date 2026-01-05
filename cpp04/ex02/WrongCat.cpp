@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:05:46 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 11:45:04 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/05 13:00:57 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 WrongCat::WrongCat() : WrongAnimal()
 {
 	this->setType("WrongCat");
+	_brain = new Brain();
 	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
@@ -34,6 +35,7 @@ WrongCat&	WrongCat::operator=(const WrongCat& other)
 WrongCat::~WrongCat()
 {
 	std::cout << "WrongCat default destructor called" << std::endl;
+	delete (_brain);
 }
 
 void	WrongCat::makeSound() const

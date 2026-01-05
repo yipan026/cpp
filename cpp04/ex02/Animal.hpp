@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 11:04:35 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 11:55:45 by yipan            ###   ########.fr       */
+/*   Created: 2026/01/05 13:09:39 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/05 13:13:28 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 # include <iostream>
 # include <string>
 
-class Animal
+class AAnimal
 {
 	private:
 		std::string	_type;
 	public:
-		Animal();
-		Animal(const Animal& other);
-		Animal&	operator=(const Animal& other);
-		virtual	~Animal();
+		AAnimal();
+		AAnimal(const AAnimal& other);
+		AAnimal&	operator=(const AAnimal& other);
+		virtual	~AAnimal();
 		//member funcs
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 
 		//getter setter
 		std::string	getType() const;
