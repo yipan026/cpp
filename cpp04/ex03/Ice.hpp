@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 10:35:42 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/06 15:21:48 by yipan            ###   ########.fr       */
+/*   Created: 2026/01/05 14:54:12 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/05 14:59:45 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef ICE_HPP
+# define ICE_HPP
 
-int	main()
+# include <iostream>
+
+class Ice
 {
-	ScavTrap	a("Player1");
+private:
+public:
+	Ice();
+	Ice(const Ice& other);
+	Ice& operator=(const Ice& other);
+	~Ice();
 
-	a.takeDamage(100);
-	for (int i = 0; i < 51; i++)
-		a.attack("Player2");
-	a.guardGate();
+	//member funcs
+	
+};
 
-	a.beRepaired(2);
-	a.takeDamage(2);
-
-	return (0);
-}
+#endif

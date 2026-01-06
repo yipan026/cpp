@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 10:35:42 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/06 15:21:48 by yipan            ###   ########.fr       */
+/*   Created: 2026/01/05 14:47:50 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/06 18:17:53 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-int	main()
+# include <iostream>
+# include <string>
+
+class AMateria
 {
-	ScavTrap	a("Player1");
+protected:
+	/* data */
+public:
+	AMateria(std::string const& type);
+	AMateria(const AMateria& other);
+	AMateria&	operator=(const AMateria& other);
+	~AMateria();
 
-	a.takeDamage(100);
-	for (int i = 0; i < 51; i++)
-		a.attack("Player2");
-	a.guardGate();
+	std::string const & getType() const;//Returns the materia type
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);
+};
 
-	a.beRepaired(2);
-	a.takeDamage(2);
 
-	return (0);
-}
+#endif

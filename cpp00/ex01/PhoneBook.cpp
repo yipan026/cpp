@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 11:49:10 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/01 11:34:53 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/05 13:37:05 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <sstream>
 
 PhoneBook::PhoneBook() : _count(0) {}
 
@@ -44,14 +45,19 @@ void PhoneBook::searchContact() const
 	
 	std::cout << "Enter index: ";
 	std::getline(std::cin, input);
-	try
-	{
-		index = std::stoi(input);
-	}
-	catch(...)
-	{
+
+	/*
+	-ss is a std::stringstream object that contains 
+	the string the user typed
+	-The >> operator tries to extract an integer 
+	from the stream and store it in index.
+	-If fails the stream goes into a fail state,
+	and ss >> index evaluates to false.
+	*/
+	std::stringstream	ss(input);
+	if (!(ss >> index) || !(ss.eof()))
 		index = -1;
-	}
+	
 	if (index >= 0 && index < total)
 		_contacts[index].display_All();
 	else

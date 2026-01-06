@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 11:44:45 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/03 12:28:50 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/06 15:13:34 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	ScavTrap(const std::string& name);
 	ScavTrap(const ScavTrap& other);
 	ScavTrap&	operator=(const ScavTrap& other);
-	~ScavTrap();
+	virtual ~ScavTrap();
 
 	//member
 	void	guardGate();

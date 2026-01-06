@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 13:00:14 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/03 13:08:12 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/06 15:14:32 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	FragTrap(const std::string& name);
 	FragTrap(const FragTrap& other);
 	FragTrap& operator=(const FragTrap& other);
-	~FragTrap();
+	virtual	~FragTrap();
 
 	//member functions
 	void	highFivesGuys(void);

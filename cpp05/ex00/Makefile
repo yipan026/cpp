@@ -5,18 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yipan <yipan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/27 12:59:46 by yipan             #+#    #+#              #
-#    Updated: 2026/01/05 13:21:41 by yipan            ###   ########.fr        #
+#    Created: 2026/01/06 09:54:38 by yipan             #+#    #+#              #
+#    Updated: 2026/01/06 09:55:21 by yipan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = megaphone.cpp
+SRCS = main.cpp Bureaucrat.cpp
 OBJCS = $(SRCS:.cpp=.o)
-
-NAME = megaphone
+NAME = ex02
 
 all: $(NAME)
 
