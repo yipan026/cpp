@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yipan <yipan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/05 14:47:56 by yipan             #+#    #+#              #
-#    Updated: 2026/01/05 14:48:23 by yipan            ###   ########.fr        #
+#    Created: 2026/01/06 09:54:38 by yipan             #+#    #+#              #
+#    Updated: 2026/01/16 14:56:57 by yipan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp AMateria.cpp
+SRCS = main.cpp Form.cpp Bureaucrat.cpp
 OBJCS = $(SRCS:.cpp=.o)
-NAME = ex02
+NAME = ex01
 
 all: $(NAME)
 

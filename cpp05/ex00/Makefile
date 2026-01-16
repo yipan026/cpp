@@ -6,7 +6,7 @@
 #    By: yipan <yipan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 09:54:38 by yipan             #+#    #+#              #
-#    Updated: 2026/01/06 09:55:21 by yipan            ###   ########.fr        #
+#    Updated: 2026/01/16 13:01:32 by yipan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Bureaucrat.cpp
 OBJCS = $(SRCS:.cpp=.o)
-NAME = ex02
+NAME = ex00
 
 all: $(NAME)
 

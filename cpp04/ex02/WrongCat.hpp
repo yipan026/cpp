@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:05:49 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 12:58:25 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/16 13:00:30 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "Brain.hpp"
 # include <iostream>
 
-class WrongCat : public WrongAnimal
+class WrongCat : public AWrongAnimal
 {
 	private:
 		Brain	*_brain;

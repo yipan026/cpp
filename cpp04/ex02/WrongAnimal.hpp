@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:05:36 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 12:30:51 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/16 12:58:27 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 # include <iostream>
 # include <string>
 
-class WrongAnimal
+class AWrongAnimal
 {
 	private:
 		std::string _type;
 	public:
-		WrongAnimal();
-		WrongAnimal(const WrongAnimal& other);
-		WrongAnimal&	operator=(const WrongAnimal& other);
-		virtual	~WrongAnimal();
+		AWrongAnimal();
+		AWrongAnimal(const AWrongAnimal& other);
+		AWrongAnimal&	operator=(const AWrongAnimal& other);
+		virtual	~AWrongAnimal();
 
 		//member funcs
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 
 		//getter setter
 		std::string	getType() const;

@@ -6,20 +6,20 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 11:05:46 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/05 13:00:57 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/16 13:00:40 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal()
+WrongCat::WrongCat() : AWrongAnimal()
 {
 	this->setType("WrongCat");
 	_brain = new Brain();
 	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
+WrongCat::WrongCat(const WrongCat& other) : AWrongAnimal(other)
 {
 	this->setType(other.getType());
 	std::cout << "WrongCat copy constructor called" << std::endl;

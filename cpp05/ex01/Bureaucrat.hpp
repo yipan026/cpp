@@ -6,7 +6,7 @@
 /*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:54:44 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/16 14:55:11 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/16 15:07:04 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -33,6 +34,7 @@ public:
 	int			getGrade() const;
 	void		incrementGrade(const int nGrade);
 	void		decrementGrade(const int nGrade);
+	void		signForm(Form& form);
 
 	//exception
 	class GradeTooHighException : public std::exception
