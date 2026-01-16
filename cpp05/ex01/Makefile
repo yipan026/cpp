@@ -6,16 +6,16 @@
 #    By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 09:54:38 by yipan             #+#    #+#              #
-#    Updated: 2026/01/16 20:54:31 by yichipan         ###   ########.fr        #
+#    Updated: 2026/01/16 20:57:23 by yichipan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp Form.cpp Bureaucrat.cpp
 OBJCS = $(SRCS:.cpp=.o)
-NAME = ex00
+NAME = ex01
 
 all: $(NAME)
 

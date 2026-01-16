@@ -3,23 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 09:54:41 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/16 20:54:54 by yichipan         ###   ########.fr       */
+/*   Created: 2026/01/16 14:50:20 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/16 14:50:21 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-
-int	main()
-{
-	Bureaucrat	A;
-	Bureaucrat	B("John", 140);
-	Bureaucrat	C("Thomas", 5);
-	Bureaucrat	cheat(C);
-	Bureaucrat	copy;
-
-	copy = B;
-	
-}
