@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:50:17 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/17 09:53:25 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/17 10:40:39 by yichipan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name(""), _signed(false), _signGrade(1),
+AForm::AForm() : _name(""), _signed(false), _signGrade(1),
 	_execGrade(1) {}
 
-Form::Form(const std::string& name, bool sign,
+AForm::AForm(const std::string& name, bool sign,
 	int signGrade, int execGrade) : _name(name),
 	_signed(sign), _signGrade(signGrade), _execGrade(execGrade)
 {
@@ -26,14 +26,14 @@ Form::Form(const std::string& name, bool sign,
 	std::cout << "Form Default Constructor" << std::endl;
 }
 
-Form::Form(const Form& other) : _name(other._name),
+AForm::AForm(const AForm& other) : _name(other._name),
 	_signed(other._signed), _signGrade(other._signGrade),
 	_execGrade(other._execGrade)
 {
 	std::cout << "Form copy constructor called" << std::endl;
 }
 
-Form& Form::operator=(const Form& other)
+AForm& AForm::operator=(const AForm& other)
 {
 	if (this != other)
 	{
@@ -42,13 +42,13 @@ Form& Form::operator=(const Form& other)
 	return (*this);
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	std::cout << "Form Default Desctructor" << std::endl;
 }
 
 //member func
-void	Form::beSigned(const Bureaucrat& bureau)
+void	AForm::beSigned(const Bureaucrat& bureau)
 {
 	if (bureau._grade <= _signGrade)
 		_signed = true;
@@ -57,37 +57,37 @@ void	Form::beSigned(const Bureaucrat& bureau)
 }
 
 //getter
-std::string	Form::getName() const
+std::string	AForm::getName() const
 {
 	return (_name);
 }
 
-bool	Form::getSignStatus() const
+bool	AForm::getSignStatus() const
 {
 	return (_signed);
 }
 
-int	Form::getSignGrade() const
+int	AForm::getSignGrade() const
 {
 	return (_signGrade);
 }
 
-int	Form::getExecGrade() const
+int	AForm::getExecGrade() const
 {
 	return (_execGrade);
 }
 
-const char* Form::GradeTooHighException::what() const throw()
+const char* AForm::GradeTooHighException::what() const throw()
 {
 	return ("Form grade too high");
 }
 
-const char* Form::GradeTooLowException::what() const throw()
+const char* AForm::GradeTooLowException::what() const throw()
 {
 	return ("Form grade too low");
 }
 
-std::ostream&	operator<<(std::ostream& out, const Form& a)
+std::ostream&	operator<<(std::ostream& out, const AForm& a)
 {
 	out << "Form name: " << a._name << "| Form Grade: "
 		<< a._grade << "| Form Sign Grade: "
