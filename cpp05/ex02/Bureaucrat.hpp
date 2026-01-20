@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:54:44 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/19 09:59:57 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:28:32 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -34,7 +34,7 @@ public:
 	int			getGrade() const;
 	void		incrementGrade(const int nGrade);
 	void		decrementGrade(const int nGrade);
-	void		signForm(Form& form);
+	void		signForm(AForm& form);
 
 	void	executeForm(AForm const& form);
 	

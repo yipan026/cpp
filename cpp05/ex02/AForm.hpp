@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:50:14 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/19 12:10:38 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:37:31 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
+# include <fstream>
 # include <string>
 # include "Bureaucrat.hpp"
 
@@ -24,15 +25,7 @@ class AForm
 		bool				_signed;
 		const int			_signGrade;
 		const int			_execGrade;
-	protected:
-		std::string	getName() const;
-		bool		getSignStatus() const;
-		int			getSignGrade() const;
-		int			getExecGrade() const;
-			
-		void	execute(Bureaucrat const& executor) const;
-		virtual void	localExec() = 0;
-			
+
 		//interfaces
 		class GradeTooHighException : public std::exception
 		{
@@ -54,15 +47,22 @@ class AForm
 		AForm();
 		AForm(const std::string& name, bool sign,
 			int signGrade, int execGrade);
-		AForm(const Form& other);
-		AForm& operator=(const Form& other);
+		AForm(const AForm& other);
+		AForm& operator=(const AForm& other);
 		virtual ~AForm();
 
 		//member func
 		void	beSigned(const Bureaucrat& bureau);
-		
+
+				std::string	getName() const;
+		bool		getSignStatus() const;
+		int			getSignGrade() const;
+		int			getExecGrade() const;
+			
+		virtual void	execute(Bureaucrat const& executor) const;
+		virtual void	localExec() const = 0;
 };
 
-std::ostream&	operator<<(std::ostream& out, const Form& a);
+std::ostream&	operator<<(std::ostream& out, const AForm& a);
 
 #endif

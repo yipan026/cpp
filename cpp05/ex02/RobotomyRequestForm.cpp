@@ -1,5 +1,14 @@
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/20 13:56:42 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/20 14:08:14 by yipan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
@@ -17,7 +26,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
-	if (this != *other)
+	if (this != &other)
 	{
 		AForm::operator=(other);
 		_target = other._target;
@@ -33,7 +42,6 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void	RobotomyRequestForm::localExec() const
 {
 	std::cout << "zzzz* Some Drilling Noise *zzzz" << std::endl;
-	//how to use the random funcs here?
 	int	x = rand() % 2;
 	if (!x)
 	{

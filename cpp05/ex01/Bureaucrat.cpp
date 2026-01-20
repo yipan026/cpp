@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:54:47 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/18 11:17:01 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:32:56 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,17 @@ void		Bureaucrat::decrementGrade(const int nGrade)
 //use "try catch" instead
 void	Bureaucrat::signForm(Form& form)
 {
-	if (_grade >= form.getSignGrade())
+	try
 	{
-		Form::beSigned(this);
+		form.beSigned(*this);
 		std::cout << _name << " signed "
 			<< form.getName() << std::endl;
 	}
-	else
+	catch (const std::exception& e)
 	{
 		std::cout << _name << " couldn't sign "
-			<< form.getName() << " because"
-			<< GradeTooLowException() << std::endl;
+			<< form.getName() << " because "
+			<< e.what() << std::endl;
 	}
 }
 

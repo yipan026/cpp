@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:50:17 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/19 09:57:47 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:35:30 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 AForm::AForm() : _name(""), _signed(false), _signGrade(1),
 	_execGrade(1) {}
@@ -35,7 +35,7 @@ AForm::AForm(const AForm& other) : _name(other._name),
 
 AForm& AForm::operator=(const AForm& other)
 {
-	if (this != other)
+	if (this != &other)
 	{
 		_signed = other._signed;
 	}
@@ -50,7 +50,7 @@ AForm::~AForm()
 //member func
 void	AForm::beSigned(const Bureaucrat& bureau)
 {
-	if (bureau._grade <= _signGrade)
+	if (bureau.getGrade() <= _signGrade)
 		_signed = true;
 	else
 		throw GradeTooLowException();
@@ -61,7 +61,7 @@ void	AForm::execute(Bureaucrat const& executor) const
 	if (!_signed)
 		throw FormNotSigned();
 	int	grade = executor.getGrade();
-	if (grade <= _signGrade && grade <= _execGrade)
+	if (grade >= _signGrade && grade >= _execGrade)
 		throw GradeTooLowException();
 	localExec();
 }
@@ -104,8 +104,8 @@ const char* AForm::FormNotSigned::what() const throw()
 
 std::ostream&	operator<<(std::ostream& out, const AForm& a)
 {
-	out << "Form name: " << a._name << "| Form Grade: "
-		<< a._grade << "| Form Sign Grade: "
-		<< a._signGrade << "| Form Exec Grade: "
-		<< a._execGrade << std::endl;
+	out << "AForm name: " << a.getName() << "| AForm Status: "
+		<< a.getSignStatus() << "| AForm Sign Grade: "
+		<< a.getSignGrade() << "| AForm Exec Grade: "
+		<< a.getExecGrade() << std::endl;
 }

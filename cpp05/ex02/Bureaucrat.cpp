@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:54:47 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/19 09:59:36 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:28:18 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name(""), _grade(150) {}
 
@@ -75,7 +76,7 @@ void		Bureaucrat::decrementGrade(const int nGrade)
 	_grade += nGrade;
 }
 
-void	Bureaucrat::signForm(Form& form)
+void	Bureaucrat::signForm(AForm& form)
 {
 	try
 	{

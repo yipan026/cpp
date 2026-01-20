@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:50:17 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/17 09:53:25 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:26:25 by yipan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Form::Form(const Form& other) : _name(other._name),
 
 Form& Form::operator=(const Form& other)
 {
-	if (this != other)
+	if (this != &other)
 	{
 		_signed = other._signed;
 	}
@@ -50,7 +50,7 @@ Form::~Form()
 //member func
 void	Form::beSigned(const Bureaucrat& bureau)
 {
-	if (bureau._grade <= _signGrade)
+	if (bureau.getGrade() <= _signGrade)
 		_signed = true;
 	else
 		throw GradeTooLowException();
@@ -89,8 +89,8 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream&	operator<<(std::ostream& out, const Form& a)
 {
-	out << "Form name: " << a._name << "| Form Grade: "
-		<< a._grade << "| Form Sign Grade: "
-		<< a._signGrade << "| Form Exec Grade: "
-		<< a._execGrade << std::endl;
+	out << "Form name: " << a.getName() << "| Form Status: "
+		<< a.getSignStatus() << "| Form Sign Grade: "
+		<< a.getSignGrade() << "| Form Exec Grade: "
+		<< a.getExecGrade() << std::endl;
 }

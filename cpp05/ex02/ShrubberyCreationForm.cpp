@@ -1,7 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/20 13:57:04 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/20 14:07:50 by yipan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-
-#include "ShrubberyCreationForm"
+#include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 	: AForm(), _target("") {}
@@ -16,7 +25,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
 {
-	if (this != *other)
+	if (this != &other)
 	{
 		AForm::operator=(other);
 		_target = other._target;

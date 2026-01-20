@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/20 13:55:31 by yipan             #+#    #+#             */
+/*   Updated: 2026/01/20 14:01:19 by yipan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
@@ -8,7 +18,7 @@ PresidentialPardonForm::PresidentialPardonForm()
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : _target(target),
 	AForm("PresidentialPardonForm", false, 25, 5)
 {
-	std:cout << "PresidentialPardonForm Default Constructor" << std::endl;
+	std::cout << "PresidentialPardonForm Default Constructor" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
@@ -16,7 +26,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& oth
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
 {
-	if (this != *other)
+	if (this != &other)
 	{
 		AForm::operator=(other);
 		_target = other._target;
