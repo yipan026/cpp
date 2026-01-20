@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yipan <yipan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:54:44 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/16 15:07:04 by yipan            ###   ########.fr       */
+/*   Updated: 2026/01/19 09:59:57 by yichipan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	const std::string	_name;
 	int					_grade;
 public:
-	Bureaucrat(/* args */);
+	Bureaucrat();
 	Bureaucrat(const std::string& name, const int grade);
 	Bureaucrat(const Bureaucrat& other);
 	Bureaucrat&	operator=(const Bureaucrat& other);
@@ -36,6 +36,8 @@ public:
 	void		decrementGrade(const int nGrade);
 	void		signForm(Form& form);
 
+	void	executeForm(AForm const& form);
+	
 	//exception
 	class GradeTooHighException : public std::exception
 	{

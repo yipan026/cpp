@@ -6,7 +6,7 @@
 /*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:50:17 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/17 10:40:39 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/19 09:57:47 by yichipan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,16 @@ void	AForm::beSigned(const Bureaucrat& bureau)
 		throw GradeTooLowException();
 }
 
+void	AForm::execute(Bureaucrat const& executor) const
+{
+	if (!_signed)
+		throw FormNotSigned();
+	int	grade = executor.getGrade();
+	if (grade <= _signGrade && grade <= _execGrade)
+		throw GradeTooLowException();
+	localExec();
+}
+
 //getter
 std::string	AForm::getName() const
 {
@@ -85,6 +95,11 @@ const char* AForm::GradeTooHighException::what() const throw()
 const char* AForm::GradeTooLowException::what() const throw()
 {
 	return ("Form grade too low");
+}
+
+const char* AForm::FormNotSigned::what() const throw()
+{
+	return ("Form has not been signed");
 }
 
 std::ostream&	operator<<(std::ostream& out, const AForm& a)

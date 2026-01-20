@@ -6,7 +6,7 @@
 #    By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 09:54:38 by yipan             #+#    #+#              #
-#    Updated: 2026/01/18 12:00:24 by yichipan         ###   ########.fr        #
+#    Updated: 2026/01/19 12:06:36 by yichipan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Form.cpp Bureaucrat.cpp AForm.cpp\
 	PresidentialPardonForm.cpp, RobotomyRequestForm.cpp\
-	ShrubberyCreationForm.cpp
+	ShrubberyCreationForm.cpp Intern.cpp
 
 OBJCS = $(SRCS:.cpp=.o)
 NAME = ex02

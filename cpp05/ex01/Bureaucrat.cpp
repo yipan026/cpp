@@ -6,7 +6,7 @@
 /*   By: yichipan <yichipan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:54:47 by yipan             #+#    #+#             */
-/*   Updated: 2026/01/17 10:03:35 by yichipan         ###   ########.fr       */
+/*   Updated: 2026/01/18 11:17:01 by yichipan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void		Bureaucrat::decrementGrade(const int nGrade)
 	_grade += nGrade;
 }
 
+//should abandon the use of if else
+//use "try catch" instead
 void	Bureaucrat::signForm(Form& form)
 {
 	if (_grade >= form.getSignGrade())
